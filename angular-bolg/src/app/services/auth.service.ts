@@ -4,7 +4,7 @@ import { RegisterPayload } from 'src/app/class/register-payload';
 import { LoginPayload } from 'src/app/class/login-payload'; 
 import { Observable } from 'rxjs'; 
 import { JwtAuthResponse } from 'src/app/class/jwt-auth-response'; 
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { LocalStorageService } from 'ngx-webstorage'; 
 
 @Injectable({
@@ -22,14 +22,15 @@ export class AuthService {
     return this.httpClient.post(`${this.url}/signup`, registerPayload);
   }
 
-  login(loginPayload: LoginPayload): Observable<boolean> {        
-    return this.httpClient.post<JwtAuthResponse>(`${this.url}/login`, loginPayload).pipe(map(
-      data => {        
-        this.localStorageService.store('authenticationToken', data.authenticationToken);
-        this.localStorageService.store('username', data.username);
-        return true; 
-      }
-    )); 
+  login(loginPayload: LoginPayload) {
+    console.log(loginPayload);
+    return this.httpClient.post(`${this.url}/signup`, loginPayload).pipe(map(data => {
+      console.log(data);
+      // this.localStorageService.store('authenticationToken', data.authenticationToken);
+      // this.localStorageService.store('username', data.username); 
+      
+    }))
+    
   }
 
 

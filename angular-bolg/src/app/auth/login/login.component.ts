@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { LoginPayload } from 'src/app/class/login-payload'; 
 import { AuthService } from 'src/app/services/auth.service'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +32,6 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     this.loginPayload.username = this.loginForm.get('username').value;
     this.loginPayload.password = this.loginForm.get('password').value;
-
     this.authService.login(this.loginPayload)
   }
 

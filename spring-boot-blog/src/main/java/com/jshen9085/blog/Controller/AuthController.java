@@ -25,9 +25,12 @@ public class AuthController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+
     @PostMapping("/login")
     public AuthenticationResponse login(@RequestBody LoginRequest loginRequest) {
+        System.out.println("got here");
         return authService.login(loginRequest);
     }
+
 
 }
