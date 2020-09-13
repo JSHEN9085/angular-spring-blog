@@ -1,8 +1,8 @@
 package com.jshen9085.blog.service;
 
 import com.jshen9085.blog.dto.LoginRequest;
-import com.jshen9085.blog.model.User;
 import com.jshen9085.blog.dto.RegisterRequest;
+import com.jshen9085.blog.model.User;
 import com.jshen9085.blog.repository.UserRepository;
 import com.jshen9085.blog.security.JwtProvider;
 import org.springframework.beans.factory.annotation.Autowired;
