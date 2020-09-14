@@ -22,13 +22,13 @@ export class AuthService {
     return this.httpClient.post(`${this.url}/signup`, registerPayload);
   }
 
-  login(loginPayload: LoginPayload) {
-    console.log(loginPayload);
-    return this.httpClient.post(`${this.url}/signup`, loginPayload).pipe(map(data => {
-      console.log(data);
-      // this.localStorageService.store('authenticationToken', data.authenticationToken);
-      // this.localStorageService.store('username', data.username); 
-      
+
+  login(loginPayload: LoginPayload): Observable<boolean> {
+    // console.log(loginPayload);
+    return this.httpClient.post<JwtAuthResponse>(`${this.url}/login`, loginPayload).pipe(map(data => {
+      this.localStorageService.store('authenticationToken', data.authenticationToken);
+      this.localStorageService.store('username', data.username); 
+      return true;
     }))
     
   }
