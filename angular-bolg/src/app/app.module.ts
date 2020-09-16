@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import {HttpClientInterceptor} from 'src/app/class/http-client-interceptor';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClientInterceptor} from 'src/app/class/http-client-interceptor';
     RegisterComponent,
     RegisterSuccessComponent,
     HomeComponent,
-    AddPostComponent
+    AddPostComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import {HttpClientInterceptor} from 'src/app/class/http-client-interceptor';
     EditorModule,
     NgxWebstorageModule.forRoot(),
     RouterModule.forRoot([
+      {path: 'posts/:id', component: PostDetailComponent},
       {path: '', component: HomeComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'login', component: LoginComponent},

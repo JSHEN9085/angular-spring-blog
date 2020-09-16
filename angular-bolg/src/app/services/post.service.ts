@@ -20,4 +20,9 @@ export class PostService {
   getAllPosts(): Observable< Array<PostPayload> > {
     return this.httpClient.get< Array<PostPayload> >(this.url);
   }
+
+  getPost(paramsId: String): Observable<PostPayload>{
+    console.log(paramsId);
+    return this.httpClient.get<PostPayload>(`${this.url}/${paramsId}`);
+  }
 }
