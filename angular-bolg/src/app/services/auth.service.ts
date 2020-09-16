@@ -30,7 +30,10 @@ export class AuthService {
       this.localStorageService.store('username', data.username); 
       return true;
     }))
-    
+  }
+
+  isAuthenticated(): Boolean {
+    return this.localStorageService.retrieve('username') != null;
   }
 
 
