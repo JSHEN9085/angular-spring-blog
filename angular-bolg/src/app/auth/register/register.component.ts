@@ -48,6 +48,7 @@ export class RegisterComponent implements OnInit {
     }, err => {
       console.log(err);
       this.duplicatedUser = true; 
+      this.registerForm.reset();
     }
     )
   }

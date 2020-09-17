@@ -43,10 +43,12 @@ export class LoginComponent implements OnInit {
       } else {
         console.log("login failed"); 
       }
+    }, () => {
+      if(this.localStorageService.retrieve('username') == null){
+        this.loginFailed = true;
+        this.loginForm.reset();
+      }
     })
-    if(this.localStorageService.retrieve('username') == null){
-      this.loginFailed = true;
-    }
   }
   //**  to see the data, need to subscribe **// 
 
