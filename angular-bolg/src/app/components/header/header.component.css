@@ -1,9 +1,4 @@
-.header{
-    padding: 5px 20px;
-    background: royalblue;
-  }
-  
-  .title{
+    .title{
     color: aliceblue;
     text-decoration: none;
   }
@@ -12,23 +7,23 @@
     float: right;
     text-decoration: none;
     color: aliceblue;
-    padding-top: 10px;
+    padding-top: 15px;
   }
   
-  .logout,.new-post{
+  .logout{
     float: right;
     color: aliceblue;
-    padding-top: 10px;
+    padding-top: 15px;
   }
-  
+
+  .new-post{
+    float: right;
+    color: aliceblue;
+    padding-top: 16.5px;
+  }
+
   .logout:hover, .new-post:hover{
     color: aliceblue;
     text-decoration: none;
-  }
-
-  .new-post {
-    float: right;
-    color: aliceblue;
-    padding-top: 10px;
   }
   

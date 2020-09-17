@@ -1,6 +1,7 @@
 package com.jshen9085.blog.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table
@@ -10,13 +11,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(unique = true)
+    @NotBlank
     private String userName;
 
     @Column
+    @NotBlank
     private String password;
 
-    @Column
+    @Column(unique = true)
+    @NotBlank
     private String email;
 
 

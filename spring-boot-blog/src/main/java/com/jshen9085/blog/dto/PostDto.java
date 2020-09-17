@@ -5,6 +5,9 @@ public class PostDto {
     private String content;
     private String title;
     private String username;
+    private Long likes;
+
+
 
     public Long getId() {
         return id;
@@ -36,5 +39,13 @@ public class PostDto {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Long getLikes(){
+        return likes;
+    }
+
+    public void setLikes(Long likes){
+        this.likes = likes;
     }
 }

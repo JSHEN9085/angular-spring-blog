@@ -46,6 +46,7 @@ public class PostService {
         postDto.setTitle(post.getTitle());
         postDto.setContent(post.getContent());
         postDto.setUsername(post.getUsername());
+        postDto.setLikes(post.getLikes());
         return postDto;
     }
 
@@ -57,11 +58,20 @@ public class PostService {
         post.setCreatedOn(Instant.now());
         post.setUsername(loggedInUser.getUsername());
         post.setUpdatedOn(Instant.now());
+        post.setLikes(0L);
         return post;
     }
 
     public PostDto readSinglePost(Long id) {
         Post post = postRepository.findById(id).orElseThrow(() -> new PostNotFoundException("For id " + id));
+        return mapFromPostToDto(post);
+    }
+
+    public PostDto updateLikes(Long id) {
+        Post post = postRepository.findById(id).orElseThrow(() -> new PostNotFoundException("For id " + id));
+        Long beforeLikesUpdated = post.getLikes();
+        post.setLikes(beforeLikesUpdated + 1);
+        postRepository.save(post);
         return mapFromPostToDto(post);
     }
 

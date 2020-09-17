@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup; 
   registerPayload: RegisterPayload
+  duplicatedUser: boolean = false; 
 
   constructor(private formBuilder: FormBuilder, 
               private authService: AuthService,
@@ -46,6 +47,7 @@ export class RegisterComponent implements OnInit {
       this.router.navigateByUrl("/register-success");  
     }, err => {
       console.log(err);
+      this.duplicatedUser = true; 
     }
     )
   }

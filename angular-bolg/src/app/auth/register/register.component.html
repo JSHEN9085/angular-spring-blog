@@ -19,4 +19,9 @@
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
     </form>
+    <span></span>
+    <div *ngIf="duplicatedUser" class="alert alert-danger">
+      <strong>This User has been registered, please try another username and email</strong>
+    </div>
+    
   </div>

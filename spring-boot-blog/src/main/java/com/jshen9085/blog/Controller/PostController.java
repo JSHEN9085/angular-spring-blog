@@ -32,4 +32,9 @@ public class PostController {
         return new ResponseEntity<>(postService.readSinglePost(id), HttpStatus.OK);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<PostDto> updateLikes(@PathVariable Long id){
+        return new ResponseEntity<>(postService.updateLikes(id), HttpStatus.OK);
+    }
+
 }

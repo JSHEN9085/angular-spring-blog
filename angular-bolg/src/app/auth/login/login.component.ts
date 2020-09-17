@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup; 
-  loginPayload: LoginPayload
+  loginPayload: LoginPayload;
+  loginFailed: boolean = false; 
 
   constructor(private authService : AuthService, private router: Router) {
     this.loginForm = new FormGroup({
@@ -38,8 +39,10 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/home');
       } else {
         console.log("login failed");
+        this.loginFailed = true; 
       }
     })
+    this.loginFailed = true; 
   }
   //**  to see the data, need to subscribe **// 
 

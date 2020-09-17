@@ -33,6 +33,9 @@ public class Post {
     @NotBlank
     private String username;
 
+    @Column
+    private Long likes;
+
 
 
     public Long getId() {
@@ -82,4 +85,13 @@ public class Post {
     public void setUpdatedOn(Instant updatedOn) {
         this.updatedOn = updatedOn;
     }
+
+    public Long getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Long likes) {
+        this.likes = likes;
+    }
+
 }
